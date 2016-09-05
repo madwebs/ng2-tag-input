@@ -1,1 +1,2 @@
-declare const components: any;
+export declare class TagInputModule {
+}

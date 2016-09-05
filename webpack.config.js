@@ -13,9 +13,8 @@ var webpackConfig = {
 
     output: {
         path: './dist',
-        libraryTarget: "umd",
-        library: 'ng2-tag-input',
-        umdNamedRequire: true
+        libraryTarget: "commonjs",
+        library: 'ng2-tag-input'
     },
 
     externals: {
