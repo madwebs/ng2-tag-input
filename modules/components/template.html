@@ -49,18 +49,5 @@
                    [attr.aria-label]="placeholder"
             />
         </form>
-
-        <div *ngIf="autocomplete">
-            <ng2-dropdown>
-                <ng2-dropdown-menu [focusFirstElement]="false"
-                                   (keydown)="escapeDropdown($event)"
-                                   offset="60 0">
-                    <ng2-menu-item *ngFor="let item of itemsMatching"
-                                   [value]="item">
-                        {{ item }}
-                    </ng2-menu-item>
-                </ng2-dropdown-menu>
-            </ng2-dropdown>
-        </div>
     </div>
 </div>

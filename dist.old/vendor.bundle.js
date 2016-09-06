@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@angular/core"), require("@angular/forms"), require("@angular/common"));
-	else if(typeof define === 'function' && define.amd)
-		define(["@angular/core", "@angular/forms", "@angular/common"], factory);
-	else if(typeof exports === 'object')
-		exports["ng2-tag-input"] = factory(require("@angular/core"), require("@angular/forms"), require("@angular/common"));
-	else
-		root["ng2-tag-input"] = factory(root["@angular/core"], root["@angular/forms"], root["@angular/common"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_18__) {
-return /******/ (function(modules) { // webpackBootstrap
+exports["ng2-tag-input"] =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -56,7 +47,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	__webpack_require__(18);
+	__webpack_require__(20);
 	module.exports = __webpack_require__(7);
 
 
@@ -65,25 +56,23 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ 1:
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+	module.exports = require("@angular/core");
 
 /***/ },
 
 /***/ 7:
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_7__;
+	module.exports = require("@angular/forms");
 
 /***/ },
 
-/***/ 18:
+/***/ 20:
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_18__;
+	module.exports = require("@angular/common");
 
 /***/ }
 
-/******/ })
-});
-;
+/******/ });
 //# sourceMappingURL=vendor.map

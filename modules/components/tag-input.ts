@@ -34,7 +34,6 @@ import {
     onAutocompleteItemClicked
 } from './events-actions';
 
-import { Ng2Dropdown } from 'ng2-material-dropdown';
 import { TagInputAccessor } from './accessor';
 import { getAction } from './keypress-actions';
 import { input } from './input-manager';
@@ -167,10 +166,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit {
      */
     @ViewChild('template') public template: ElementRef;
 
-    /**
-     * @name dropdown
-     */
-    @ViewChild(Ng2Dropdown) public dropdown;
 
     /**
     * list of items that match the current value of the input (for autocomplete)
@@ -253,9 +248,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit {
      * @desc adds the current text model to the items array
      */
     public addItem(isFromAutocomplete = false): void {
-        if (this.autocomplete && this.dropdown.state.selectedItem && !isFromAutocomplete) {
-            return;
-        }
 
         // update form value with the transformed item
         const item = this.setInputValue(this.form.value.item);
@@ -370,14 +362,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit {
         return this.maxItems !== undefined && this.items.length >= this.maxItems;
     }
 
-    private escapeDropdown($event) {
-        const isArrowUp = $event.keyCode === 38;
-        const isFirstItemsSelected = this.dropdown.menu.items.first.isSelected;
-
-        if (isArrowUp && isFirstItemsSelected) {
-            this.focus();
-        }
-    }
 
     ngOnInit() {
         // setting up the keypress listeners
@@ -427,11 +411,6 @@ export class TagInputComponent extends TagInputAccessor implements OnInit {
         if (vm.autocomplete) {
             addListener.call(vm, KEYUP, autoCompleteListener);
 
-            vm.dropdown.onItemClicked.subscribe(onAutocompleteItemClicked.bind(vm));
-
-            vm.dropdown.onHide.subscribe(() => {
-                vm.itemsMatching = [];
-            });
         }
     }
 }
